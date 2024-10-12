@@ -1,13 +1,13 @@
 import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-web";
+import ToDoList from "./ToDoList";
 
 export default function Page() {
   return (
-    <View style={styles.container}>
-      <View style={styles.main}>
-        <Text style={styles.title}>Hello World</Text>
-        <Text style={styles.subtitle}>This is the first page of your app.</Text>
-      </View>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <Text style={styles.title}>To Do List</Text>
+      <ToDoList />
+    </SafeAreaView>
   );
 }
 
@@ -16,19 +16,10 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     padding: 24,
-  },
-  main: {
-    flex: 1,
     justifyContent: "center",
-    maxWidth: 960,
-    marginHorizontal: "auto",
   },
   title: {
-    fontSize: 64,
+    fontSize: 50,
     fontWeight: "bold",
-  },
-  subtitle: {
-    fontSize: 36,
-    color: "#38434D",
   },
 });
