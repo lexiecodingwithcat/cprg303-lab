@@ -2,12 +2,12 @@ import { ScrollView, StyleSheet, View, TextInput, Button } from "react-native";
 import React from "react";
 import ToDoTask from "./ToDoTask";
 
-const ToDoFrom = () => {
+const ToDoFrom = ({ tasks = [] }) => {
   return (
     <ScrollView>
-      <ToDoTask completed>Do laundry</ToDoTask>
-      <ToDoTask>Go to gym</ToDoTask>
-      <ToDoTask completed>Walk dog</ToDoTask>
+      {tasks.map((task) => (
+        <ToDoTask key={task}>{task}</ToDoTask>
+      ))}
       <View style={styles.form}>
         <TextInput style={styles.input} placeholder="Add a task..." />
         <Button title="Add" />

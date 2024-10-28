@@ -1,8 +1,10 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, Touchable, View } from "react-native";
 import React from "react";
-import { Link } from "expo-router";
+import { Link, useNavigation } from "expo-router";
+import { TouchableOpacity } from "react-native";
 
 const Index = () => {
+  const navigator = new useNavigation();
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Home screen</Text>
@@ -12,6 +14,12 @@ const Index = () => {
       <Link href="/login" style={styles.text}>
         Go to Log in
       </Link>
+      {/* <Link href="/tabs" style={styles.text}>
+        GO TO TABS
+      </Link> */}
+      <TouchableOpacity onPress={() => navigator.navigate("(tabs)")}>
+        <Text style={styles.text}>TABS</Text>
+      </TouchableOpacity>
     </View>
   );
 };

@@ -2,15 +2,15 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { Stack } from "expo-router";
 
-const Layout = () => {
+const _layout = () => {
   return (
     <Stack>
-      <Stack.Screen name="index" options={{ title: "home" }} />
-      <Stack.Screen name="(tabs)" />
+      <Stack.Screen name="user1" />
+      <Stack.Screen name="user2" />
     </Stack>
   );
 };
 
-export default Layout;
+export default _layout;
 
 const styles = StyleSheet.create({});
