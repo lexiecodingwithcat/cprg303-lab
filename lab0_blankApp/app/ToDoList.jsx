@@ -2,10 +2,10 @@ import { StyleSheet, Text, View, ScrollView, SafeAreaView } from "react-native";
 import React from "react";
 import ToDoFrom from "./ToDoFrom";
 
-const ToDoList = ({ tasks }) => {
+const ToDoList = ({ tasks, handleAddTask }) => {
   return (
     <SafeAreaView>
-      <ToDoFrom tasks={tasks} />
+      <ToDoFrom tasks={tasks} handleAddTask={handleAddTask} />
     </SafeAreaView>
   );
 };

@@ -5,10 +5,13 @@ import { useState } from "react";
 
 export default function Page() {
   const [tasks, setTasks] = useState(["Do laundry", "Go to gym", "Walk dog"]);
+  const addTask = function (newTask) {
+    setTasks((tasks) => [...tasks, newTask]);
+  };
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>To Do List</Text>
-      <ToDoList tasks={tasks} />
+      <ToDoList tasks={tasks} handleAddTask={addTask} />
     </SafeAreaView>
   );
 }
