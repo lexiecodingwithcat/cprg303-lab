@@ -1,30 +1,19 @@
 import { StyleSheet, Text, View } from "react-native";
-import { SafeAreaView } from "react-native-web";
-import ToDoList from "./ToDoList";
-import { useState } from "react";
 
+import { NavigationContainer } from "@react-navigation/native";
+// import { createStackNavigator } from "@react-navigation/stack";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import HomeScreen from "./screens/HomeScreen";
+import AboutScreen from "./screens/AboutScreen";
+// const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 export default function Page() {
-  const [tasks, setTasks] = useState(["Do laundry", "Go to gym", "Walk dog"]);
-  const addTask = function (newTask) {
-    setTasks((tasks) => [...tasks, newTask]);
-  };
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>To Do List</Text>
-      <ToDoList tasks={tasks} handleAddTask={addTask} />
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="About" component={AboutScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    padding: 24,
-    justifyContent: "center",
-  },
-  title: {
-    fontSize: 50,
-    fontWeight: "bold",
-  },
-});
